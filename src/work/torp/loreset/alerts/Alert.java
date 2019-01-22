@@ -13,7 +13,7 @@ public class Alert {
 		String header = "";
 		if (includeHeader)
 		{
-			header = ChatColor.BLUE + "[Sonar] ";
+			header = ChatColor.BLUE + "[LoreSet] ";
 		}
 		if (sender != null)
 		{
@@ -26,7 +26,7 @@ public class Alert {
 		String header = "";
 		if (includeHeader)
 		{
-			header = ChatColor.BLUE + "[Sonar] ";
+			header = ChatColor.BLUE + "[LoreSet] ";
 		}
 		if (player != null)
 		{
@@ -41,7 +41,7 @@ public class Alert {
 	public static void Log(String function, String message)
 	{
 		ConsoleCommandSender clogger = Main.getInstance().getServer().getConsoleSender();
-		clogger.sendMessage(ChatColor.DARK_PURPLE + "[Sonar]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
+		clogger.sendMessage(ChatColor.DARK_PURPLE + "[LoreSet]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
 	}
 	public static void VerboseLog(String function, String message)
 	{
@@ -50,7 +50,7 @@ public class Alert {
 		{
 			if (vlog.toLowerCase() == "true") {
 				ConsoleCommandSender clogger = Main.getInstance().getServer().getConsoleSender();
-				clogger.sendMessage(ChatColor.DARK_RED + "[Sonar.Verbose]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
+				clogger.sendMessage(ChatColor.DARK_RED + "[LoreSet.Verbose]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
 			}	
 		}
 	}

@@ -98,9 +98,9 @@ public class Lore implements CommandExecutor {
 							{
 								if (Functions.setName(istack, loreParam))
 								{
-									Alert.Player("You have set the Name of this item", player, true);
+									Alert.Player(ChatColor.GREEN + "SUCCESS! - " + ChatColor.RESET + "You have set the Name of this item", player, true);
 								} else {
-									Alert.Player("Unable to set name for this item", player, true);
+									Alert.Player(ChatColor.RED + "Unable to set name for this item", player, true);
 								}
 							}
 							if (clear) // Clear first, if we're setting, we'll clear then add
@@ -109,10 +109,10 @@ public class Lore implements CommandExecutor {
 								{
 									if (clear && !add)
 									{
-										Alert.Player("You have cleared the Lore of this item", player, true);
+										Alert.Player(ChatColor.GREEN + "SUCCESS! - " + ChatColor.RESET + "You have cleared the Lore of this item", player, true);
 									}
 								} else {
-									Alert.Player("Unable to clear Lore for this item", player, true);
+									Alert.Player(ChatColor.RED + "Unable to clear Lore for this item", player, true);
 								}
 							}
 							if (add) // Used if adding or setting
@@ -121,12 +121,12 @@ public class Lore implements CommandExecutor {
 								{
 									if (add && !clear)
 									{
-										Alert.Player("You have added to the Lore of this item", player, true);
+										Alert.Player(ChatColor.GREEN + "SUCCESS! - " + ChatColor.RESET + "You have added to the Lore of this item", player, true);
 									} else {
-										Alert.Player("You have set the Lore of this item", player, true);
+										Alert.Player(ChatColor.GREEN + "SUCCESS! - " + ChatColor.RESET + "You have set the Lore of this item", player, true);
 									}
 								} else {
-									Alert.Player("Unable to add Lore for this item", player, true);
+									Alert.Player(ChatColor.RED + "Unable to add Lore for this item", player, true);
 								}
 							}
 							
@@ -135,7 +135,7 @@ public class Lore implements CommandExecutor {
 							Alert.VerboseLog("Lore",  player.getName() + " tried to use /lore without an item in hand");
 						}
 					} else {
-						Alert.Player("You do not have permission to run this command", player, true);
+						Alert.Player(ChatColor.RED + "You do not have permission to run this command", player, true);
 						Alert.VerboseLog("Lore", "/lore attempted by " + player.getName() + " for " + args[0] + " - Refused due to lack of permissions");
 						return true;
 					}
@@ -152,7 +152,7 @@ public class Lore implements CommandExecutor {
 		catch (Exception ex)
 		{
 			Alert.Log("Lore", "Unexpected error in /lore - " + ex.getMessage());
-			sender.sendMessage(ChatColor.RED + "[BNW Lore] - Error using /lore");
+			Alert.Sender(ChatColor.RED + " - Error using /lore", sender, true);
 			returnVal = false;
 		}
 
